@@ -3,7 +3,6 @@ module.exports = {
     title: "sulkers-site",
   },
   plugins: [
-    "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
@@ -22,6 +21,12 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
   ],
 };
