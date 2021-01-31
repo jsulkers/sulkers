@@ -1,32 +1,24 @@
-import React from "react"
-import { Link } from "gatsby"
-import SulkersImg from "/src/images/sulkers.jpg"
-import Container from "../components/container"
-
-
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+import React from "react";
+import {Link} from "gatsby";
+import Header from "../components/header";
+import {Container, Row, Col, Navbar, Nav, NavDropdown} from "react-bootstrap";
 
 export default function Layout({children}) {
-  return(
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-      <header style={{ marginBottom: `1.5rem` }}>
-        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-          <h3 style={{ display: `inline` }}>Josh Sulkers</h3>
-        </Link>
-        <ul style={{ listStyle: `none`, float: `right` }}>
-          <ListLink to="/">Home</ListLink>
-          <ListLink to="/about/">About</ListLink>
-          <ListLink to="/contact/">Contact</ListLink>
-        </ul>
-      </header>
-      <Container>
-      <img src={SulkersImg} id="bg" alt="Pic of Josh" />
+  return (
+    <div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand href="/">Josh Sulkers</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href="#deets">About</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              Contact
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       {children}
-      </Container>
     </div>
-  )
+  );
 }

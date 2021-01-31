@@ -1,15 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import {Container, Row, Col} from "react-bootstrap";
+import SulkersImg from "/src/images/sulkers.jpg";
 
-export default function Home() {
+export default function Index() {
   return (
     <Layout>
-      <div>
-        <h1>Josh Sulkers</h1>
-        <Link to="/contact/">Contact</Link>
-        <h1>Test</h1>
-      </div>
+    <Container fluid>
+      <Row>
+        <Col>
+          <img class="source-image" src={SulkersImg} alt="Pic of Josh" />
+        </Col>
+        <Col></Col>
+      </Row>
+    </Container>
     </Layout>
   )
 }
